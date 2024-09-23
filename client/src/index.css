@@ -1,13 +1,351 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.loginContainer{
+  width: 40vw;
+  height: 85vh; 
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  margin-left: 30vw;
+  background-color: #8d99a7;
+  position: relative;
+  border: #442519 solid 2px;
+  border-radius: .5rem;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
+  animation: fadeIn 4s ease forwards; /* Apply fadeIn animation */
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start opacity from 0 */
+  }
+  to {
+    opacity: 1; /* End opacity at 1 */
+  }
+}
+
+#loginHeader{
+  font-size: 2.5rem;
+  font-family: "Lucida Console";
+  margin-top: 10vh;
+  color: #0969a1;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 4s ease forwards; /* Apply fadeIn animation */
+}
+
+.inputContainer {
+  position: relative; /* Position the border relative to the container */
+
+}
+#positionBorder{
+  display: flex;
+  justify-content: center;
+}
+/* Add styles for the border element */
+.inputBorder {
+  position: absolute; /* Position the border absolutely */
+  top: 19vh; /* Align the border to the bottom of the container */
+  width: 10vw;
+  height: 2px; /* Initial height */
+  background-color: #cccccd; /* Initial border color */
+  transition: padding 0.3s, width 0.3s; /* Transition for border width */
+  animation: fadeIn 4s ease forwards; /* Apply fadeIn animation */
+}
+
+
+.inputBorder.focused {
+  width: 20vw; /* Change the width when focused */
+  margin-top: .75vh;
+}
+
+/* Add styles for the input field */
+.input-seed {
+  height: 3rem;
+  position: relative;
+  top: 10vh;
+  margin-left: 14vw;
+  text-align: center;
+  font-family: "Lucida Console";
+  border: none;
+  border-radius: .25rem;
+  color: #27375c;
+  animation: fadeIn 5s ease forwards; /* Apply fadeIn animation */
+  overflow-x: auto;
+
+}
+
+.input-seed:hover, :focus{
+  top: 10vh;
+  background-color: #9dafd7;
+  border: solid #6c7a96 2px;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.7);
+}
+.input-seed::-webkit-inner-spin-button,
+.input-seed::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.submitSeed {
+  position: absolute;
+  top: 40vh;
+  height: 1.5rem;
+  font-family: "Lucida Console";
+  border-radius: .25rem;
+  border: outset 2px #949393;
+}
+.submitSeed:hover{
+  border: inset 3px #949393;
+}
+#centerSubmitButton{
+  display: flex;
+  justify-content: center;
+}
+#loadingSubmit { 
+  top: 15vh;
+  left: 6vw;
+  position: relative;
+  font-family: "Lucida Console";
+}
+
+#centerOr{
+  display: flex;
+  justify-content: center;
+}
+#optionOr{
+  font-size: 3rem;
+  margin-top: 23vh;
+  color: #0969a1;
+  font-family: "Lucida Console";
+}
+#newSeedContainer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#newSeed{
+  position: absolute;
+  border-radius: .25rem;
+  font-family: "Lucida Console";
+  border: 2px outset #949393; /* Set initial border */
+  height: 2rem;
+  top: 2vh;
+
+}
+
+#newSeed:hover {
+  border: 3px inset #949393;
+}
+
+#noteText { 
+  bottom: 0vh;
+  left: 5vw;
+  font-size: .75rem;
+  color: #000;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+}
+#ioContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.addingBusiness {
+    height: 3rem;
+    width: 14rem;
+    position: relative;
+    margin-left: 4vw;
+    margin-bottom: 1vh;
+    text-align: center;
+    font-family: "Lucida Console";
+    border: none;
+    border-radius: .25rem;
+    color: #27375c;
+    overflow-x: auto;
+  
+}
+.addingBusiness:hover{
+  margin-left: 4vw;
+  margin-bottom: 1vh;
+  background-color: #9dafd7;
+  border: solid #6c7a96 2px;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.7);
+  }
+.addingBusiness:focus{
+  position: relative;
+  top: 0vh;
+
+}
+  .addingBusiness::-webkit-inner-spin-button,
+  .addingBusiness::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  
+#submitBusinessAccount {
+  position: relative;
+  height: 1.5rem;
+  top: 15vh;
+  left: 3vw;
+  font-family: "Lucida Console";
+  border-radius: .25rem;
+  border: outset 2px #949393;
+}
+#submitBusinessAccount:hover {
+  border: inset 3px #949393;
+}
+#loadingCreate {
+  top: 10vh;
+  left: 3vw;
+  position: relative;
+  font-family: "Lucida Console";
+}
+#errorText {
+  position: relative;
+  bottom: 5vh;
+  left: 28vw;
+  color: red;
+}
+
+/*Main Page (App.js) */
+
+body { /*background of page */
+  margin: 0; /* Remove default margin */
+  background-color: #fff;
+  overflow-x: hidden;
+}
+.mainHeader { /*main header for GFD order forms*/
+  position: relative;
+  text-align: center;
+  background-color: #8d99a7;
+  padding-top: 2vh;
+  margin: 0;
+  z-index: 1;
+}
+#mainHeaderText{
+  font-size: 3.5rem;
+  color: #0969a1;
+  position: relative;
+}
+
+.containermainlogo { /* contains the logo*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+} 
+.mainlogo { /*main logo in top left corner */
+  padding-top: 2vh;
+  padding-left: 3vw;
+  z-index: 2;
+  height: 20vh;
+  transform: scale(2);   
+}
+.custom-main-border { /* border around the main gfd header*/
+  position: relative;
+  border-style: outset;
+  width: 100vw;
+  padding-bottom: 4vh;
+  background-color: #8d99a7;
+  border-color: #42484f;
+  z-index: 0;
+}
+.tabs{ /*tab buttons */
+  position: absolute;
+  color: #9a173a;
+  font-family: serif;
+  top: 5vh;
+  right: 4vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+}
+.tabs button{ /*meant for the send/check order and order history */
+  color: #bdbec0;
+  font-family: serif;
+  background-color: #0969a1;
+  border-color: #0969a1;
+  border-style: outset;
+  border-radius: .25rem;
+  margin-bottom: 3vh;
+  z-index: 1;
+  font-size: 1.25rem;
+  width: 10vw;
+  height: 4vh;
+}
+.tabs button:hover{
+  border-color: #063a57;
+  background-color:#063a57;
+  border-width: 3px;
+  transform: scale(1.05);
+}
+#headerSubText {
+  font-size: 1.5rem;
+  color: #0969a1;
+  font-family: serif;
+  position: relative;
+  text-align: center;
+  margin-top: -2vh;
+  animation: fadeIn 4s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+@media (max-width: 75em) and (min-width: 38em) {
+  .mainHeader {
+    font-size: 2.15rem;
+  }
+  .tabs {
+    right: 3vw;
+  }
+  .tabs button {
+    width: 8vw;
+    font-size: .75rem;
+    margin-bottom: 1.5vh;
+  }
+  .mainlogo { 
+    height: 16vh;
+  }
+}
+
+@media (max-width: 38em) {
+  .mainHeader {
+    font-size: 1.5rem;
+  }
+  .tabs {
+    right: 3vw;
+    top: 1vh;
+  }
+  .tabs button {
+    width: 8vw;
+    font-size: .55rem;
+    margin-bottom: 1.5vh;
+  }
+  .mainlogo { 
+    height: 12vh;
+  }
+}
+
+@media (max-height: 35em) {
+  .mainHeader {
+    font-size: 2.5rem;
+    height: 30vh;
+  }
+  .tabs {
+    right: 6vw;
+    top: 2vh;
+  }
+  .tabs button {
+    width: 8vw;
+    font-size: .75rem;
+    margin-bottom: 1.5vh;
+  }
+  .mainlogo { 
+    height: 25vh;
+  }
+
 }
